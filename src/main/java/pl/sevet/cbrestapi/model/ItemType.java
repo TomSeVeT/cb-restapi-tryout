@@ -1,0 +1,55 @@
+package pl.sevet.cbrestapi.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class ItemType {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long groupId;
+    private String name;
+    private String description;
+
+    public ItemType() {
+    }
+
+    public ItemType(Long id, Long groupId, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.groupId = groupId;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
